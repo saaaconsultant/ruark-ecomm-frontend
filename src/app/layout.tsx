@@ -33,7 +33,7 @@ export default function RootLayout({
         <div className="sticky top-0 z-50 bg-white shadow-sm">
           <Header />
         </div>
-        <div className="overflow-y-auto px-8">{children}</div>
+        <div className="overflow-y-auto ">{children}</div>
         <Footer />
       </body>
     </html>
