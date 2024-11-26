@@ -1,16 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import logoImg from "../assets/Ruark_Logo_Lockup_SL_2023_Black.jpg";
-import { HiOutlineUserCircle } from "react-icons/hi2";
+import logoImg from "../assets/Ruark_Logo_Lockup_SL_2023_Grey.png";
 import { CiSearch } from "react-icons/ci";
 import { PiHandbagSimpleThin } from "react-icons/pi";
+import { PiUserCircleLight } from "react-icons/pi";
 
 const Header = () => {
-  const LinksArray = ["Shop", "Featured", "About"];
+  const LinksArray: string[] = ["Shop", "Featured", "About"];
   const RightLinksArray = [
     {
       icon: (
-        <HiOutlineUserCircle
+        <PiUserCircleLight
           size={25}
           className="cursor-pointer hover:text-gray-400 transition-all "
         />
@@ -34,13 +34,13 @@ const Header = () => {
     },
   ];
   return (
-    <div className="max-w-full  flex items-center  bg-white justify-center ">
+    <div className="max-w-full p-2 flex items-center bg-white/50 backdrop-blur-md justify-center ">
       <div className="w-full py-4 px-8 flex items-center justify-between">
         <ul className="min-w-32 whitespace-nowrap  flex items-center justify-center gap-8">
           {LinksArray?.map((link, index) => (
             <li
               key={index}
-              className="text-sm font-light cursor-pointer hover:text-gray-400 transition-all  "
+              className="text-sm font-light text-gray-800 cursor-pointer hover:text-gray-400 transition-all  "
             >
               {link}
             </li>

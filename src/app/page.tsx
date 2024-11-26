@@ -1,22 +1,110 @@
-// import Image from "next/image";
-
+"use client";
 import Carousel from "@/components/Carousel";
-import logoimg from "../assets/Ruark_Logo_Lockup_SL_2023_Black.jpg";
+import logoimg1 from "@/assets/carouselImg/img1.png";
+import logoimg2 from "@/assets/carouselImg/img2.jpg";
+import logoimg3 from "@/assets/carouselImg/img3.jpg";
+import ShopSummary from "@/components/ShopSummary";
+import Marquee from "@/components/Marquee";
+import { useEffect, useState } from "react";
+import TimerBanner from "@/components/TimerBanner";
+import bgimg from "@/assets/carouselImg/img1.png";
+import ScrollTimeLine from "@/components/ScrollTimeLine";
+import USPSection from "@/components/USPSection";
+import OurFeature from "@/components/OurFeature";
+import ProductCarousel from "@/components/ProductCarousel";
+
 export default function Home() {
-  const items = [
+  const images = [
     {
-      imageUrl: logoimg,
-      alt: "Description 1",
+      src: logoimg1,
+      description: "A beautiful sunrise over the mountains.",
+      title: "Discover Our Collection",
+      buttonText: "Shop Now",
+      buttonLink: "/shop",
     },
     {
-      imageUrl: logoimg,
-      alt: "Description 2",
+      src: logoimg2,
+      title: "Summer Sale",
+      description: "A serene lake surrounded by lush forest.",
+      buttonText: "View Deals",
+      buttonLink: "/sale",
+    },
+    {
+      src: logoimg3,
+      description: "A vibrant cityscape during sunset.",
+      title: "Summer Sale",
+      buttonText: "View Deals",
+      buttonLink: "/sale",
     },
   ];
+
+  const marqueeItems = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Web Development",
+  ];
+
+  const [timeLeft, setTimeLeft] = useState({
+    days: 338,
+    hours: 15,
+    minutes: 27,
+    seconds: 18,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        let { days, hours, minutes, seconds } = prevTime;
+
+        seconds--;
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+          if (minutes < 0) {
+            minutes = 59;
+            hours--;
+            if (hours < 0) {
+              hours = 23;
+              days--;
+            }
+          }
+        }
+
+        return { days, hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="">
-      Carousel
-      {/* <Carousel items={items} autoPlay={true} interval={5000} showDots={true} /> */}
+      <Carousel images={images} />
+      <ShopSummary />
+      <Marquee
+        text={[
+          "'Express yourself in your own way .'",
+          "'Express yourself in your own way.'",
+          "'Express yourself in your own way.'",
+          "'Express yourself in your own way.'",
+          "'Express yourself in your own way.'",
+        ]}
+        speed={50}
+      />
+      <TimerBanner
+        backgroundImage={bgimg}
+        title="Last chance"
+        description="Get 20% off all sale items"
+        days={timeLeft.days}
+        hours={timeLeft.hours}
+        minutes={timeLeft.minutes}
+        seconds={timeLeft.seconds}
+      />
+      <ProductCarousel />
+      {/* <ScrollTimeLine /> */}
+      <OurFeature />
+      <USPSection />
     </div>
   );
 }

@@ -20,7 +20,18 @@ export default {
         semiBold: '600',
         bold: '700',
       },
+      animation: {
+        marquee: 'marquee 0s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 } satisfies Config;
