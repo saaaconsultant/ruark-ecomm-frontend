@@ -9,17 +9,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'], // Add Montserrat as the default sans-serif font
+        body: ['Montserrat', 'sans-serif'],                  // Body text
+        heading: ['"ITC Novarese"', 'serif'],               // Headings
+        subheading: ['Montserrat', 'sans-serif'],           // Subheadings
+        nav: ['Montserrat', 'sans-serif'],                  // Navigation
+        button: ['"Avenir Next"', 'sans-serif'],           // Buttons
+        productTitle:["Instrument Sans", 'sans-serif'],    // Product
       },
-      fontWeight: {
-        thin: '100',
-        extraLight: '200',
-        light: '300',
-        regular: '400',
-        medium: '500',
-        semiBold: '600',
-        bold: '700',
-      },
+      
       animation: {
         marquee: 'marquee 0s linear infinite',
       },

@@ -63,7 +63,7 @@ const Marquee: React.FC<MarqueeProps> = ({
           {displayText.map((item, index) => (
             <span
               key={index}
-              className="px-4 text-xl text-gray-700 font-thin  transition-colors duration-300 cursor-default"
+              className="px-4 text-xl font-heading text-[#333] font-normal  transition-colors duration-300 cursor-default"
             >
               {item}
             </span>

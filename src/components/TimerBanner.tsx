@@ -34,9 +34,13 @@ const TimerBanner: React.FC<CountdownBannerProps> = ({
       <div className="relative z-10 w-full max-w-6xl mx-auto flex items-center justify-between ">
         {/* Left Content */}
         <div className="w-1/2 ">
-          <h6 className="text-lg font- text-white mb-4">{title}</h6>
-          <h3 className="text-4xl text-gray-200 mb-4">{description}</h3>
-          <button className="border text-gray-200 border-gray-200 py-4 px-6  text-sm font-light">
+          <h6 className="text-[16px] font-subheading text-white mb-4">
+            {title}
+          </h6>
+          <h3 className="text-5xl font-heading font-normal text-gray-200 mb-4">
+            {description}
+          </h3>
+          <button className="border text-gray-200 bg-transparent font-button tracking-widest border-gray-200 py-4 px-6  text-[12px] font-normal">
             SHOP 20% OFF NOW
           </button>
         </div>
@@ -46,28 +50,36 @@ const TimerBanner: React.FC<CountdownBannerProps> = ({
           <div className="p-6 text-center">
             <div className="grid grid-cols-4 gap-8 text-white">
               <div>
-                <span className="block text-6xl font-light">
+                <span className="block text-6xl font-normal font-heading">
                   {days.toString().padStart(2, "0")}
                 </span>
-                <span className="block text-sm">Days</span>
+                <span className="block text-[16px] font-nav font-normal">
+                  DAYS
+                </span>
               </div>
               <div>
                 <span className="block text-6xl font-light">
                   {hours.toString().padStart(2, "0")}
                 </span>
-                <span className="block text-sm">Hours</span>
+                <span className="block text-[16px] font-nav font-normal">
+                  HOURS
+                </span>
               </div>
               <div>
                 <span className="block text-6xl font-light">
                   {minutes.toString().padStart(2, "0")}
                 </span>
-                <span className="block text-sm">Minutes</span>
+                <span className="block text-[16px] font-nav font-normal">
+                  MINUTES
+                </span>
               </div>
               <div>
                 <span className="block text-6xl font-light">
                   {seconds.toString().padStart(2, "0")}
                 </span>
-                <span className="block text-sm">Seconds</span>
+                <span className="block text-[16px] font-nav font-normal">
+                  SECONDS
+                </span>
               </div>
             </div>
           </div>

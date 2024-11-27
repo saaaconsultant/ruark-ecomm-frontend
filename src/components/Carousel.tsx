@@ -65,25 +65,27 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
               />
 
               <div className="absolute inset-0 pl-10 bg-black bg-opacity-40 flex items-end justify-start">
-                <div className="text-left text-white max-w-xl p-8 pb-12">
-                  <h2 className="text-5xl font-thin mb-3">{image.title}</h2>
-                  <p className="text-lg font-thin mb-5 max-w-md">
+                <div className="text-left text-white  p-8 pb-12">
+                  <h2 className="text-[53px] font-normal font-heading mb-3">
+                    {image.title}
+                  </h2>
+                  <p className="text-[16px] font-body font-normal mb-5 max-w-md">
                     {image.description}
                   </p>
 
                   {image.buttonText && image.buttonLink && (
                     <div className="w-full flex items-start justify-start gap-3">
                       <button
-                        className="inline-block bg-black text-white px-6 py-3  
+                        className="inline-block bg-[#212121] border border-[#212121] text-white px-6 py-3  
                       hover:bg-opacity-90 transition duration-300 
-                      font-thin  uppercase tracking-wider"
+                      font-button font-normal text-sm  uppercase tracking-wider"
                       >
-                        SHOP SALE
+                        SHOP ALL PRODUCTS
                       </button>
                       <button
                         className="inline-block bg-white text-black px-6 py-3  
                       hover:bg-opacity-90 transition duration-300 
-                      font-thin uppercase tracking-wider"
+                      font-button text-sm font-normal uppercase tracking-wider"
                       >
                         {image.buttonText}
                       </button>

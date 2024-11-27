@@ -1,13 +1,18 @@
 "use client";
 import Carousel from "@/components/Carousel";
-import logoimg1 from "@/assets/carouselImg/img1.png";
-import logoimg2 from "@/assets/carouselImg/img2.jpg";
-import logoimg3 from "@/assets/carouselImg/img3.jpg";
+import logoimg1 from "@/assets/carouselImg/R2MK4(HR)Espresso-042.jpg";
+import logoimg2 from "@/assets/carouselImg/R2MK4Espresso(HR)-0422-1.jpg";
+import logoimg3 from "@/assets/carouselImg/R2MK4Espresso(HR)-0422-3.jpg";
+import logoimg4 from "@/assets/carouselImg/R2MK4Espresso(HR)-0422-4.jpg";
+import logoimg5 from "@/assets/carouselImg/R2MK4LightCream(HR)-0422-1.jpg";
+import logoimg6 from "@/assets/carouselImg/R2MK4LightCream(HR)-0422-3.jpg";
+import logoimg7 from "@/assets/carouselImg/R2MK4LightCream(HR)-044.jpg";
+
 import ShopSummary from "@/components/ShopSummary";
 import Marquee from "@/components/Marquee";
 import { useEffect, useState } from "react";
 import TimerBanner from "@/components/TimerBanner";
-import bgimg from "@/assets/carouselImg/img1.png";
+import bgimg from "@/assets/carouselImg/MR1Walnut-0422.jpg";
 import ScrollTimeLine from "@/components/ScrollTimeLine";
 import USPSection from "@/components/USPSection";
 import OurFeature from "@/components/OurFeature";
@@ -36,14 +41,34 @@ export default function Home() {
       buttonText: "View Deals",
       buttonLink: "/sale",
     },
-  ];
-
-  const marqueeItems = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Web Development",
+    {
+      src: logoimg4,
+      description: "A vibrant cityscape during sunset.",
+      title: "Summer Sale",
+      buttonText: "View Deals",
+      buttonLink: "/sale",
+    },
+    {
+      src: logoimg5,
+      description: "A vibrant cityscape during sunset.",
+      title: "Summer Sale",
+      buttonText: "View Deals",
+      buttonLink: "/sale",
+    },
+    {
+      src: logoimg6,
+      description: "A vibrant cityscape during sunset.",
+      title: "Summer Sale",
+      buttonText: "Super Deals",
+      buttonLink: "/sale",
+    },
+    {
+      src: logoimg7,
+      description: "A vibrant cityscape during sunset.",
+      title: "OFF Sale",
+      buttonText: "View More",
+      buttonLink: "/sale",
+    },
   ];
 
   const [timeLeft, setTimeLeft] = useState({
@@ -78,6 +103,7 @@ export default function Home() {
 
     return () => clearInterval(timer);
   }, []);
+
   return (
     <div className="">
       <Carousel images={images} />
